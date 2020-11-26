@@ -1,0 +1,15 @@
+n = int(input())
+for i in range(0,n):
+    k = int(input())
+    sentence = str(input())
+    sum = 0
+    f=0
+    for i in range(0,len(sentence)-1):
+        if sentence[i] == ' ':
+            f = f+1
+        if f == k:
+            sum += ord(sentence[i])
+    if sum > 0:
+        print(sum)
+    else :
+        print("-1")
