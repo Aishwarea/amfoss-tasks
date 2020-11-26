@@ -1,0 +1,34 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int N, M, i, j, ele;
+    cin>>N>>M;
+    int A[N];
+    int Result;
+    for(i=0; i<N; i++)
+    {
+        cin>>A[i];
+    }
+    i=0;
+    j=N;
+    while (i!=j)
+    {
+        ele = A[i]+A[j];
+        if(ele == M)
+            Result = 1;
+        ++i;
+        --j;
+    }
+    if (Result == 1)
+        cout<<"True"<<endl;
+    else 
+        cout<<"False"<<endl;
+    return 0;
+}
