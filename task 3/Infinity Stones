@@ -1,0 +1,48 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int t, M, N, K, flag=0;
+    cin>>t;
+    for(int i =0; i<t; i++)
+    {
+    cin>>N>>M>>K;
+    int A[M];
+    int B[M];
+    for(int i=0;i<M; i++)
+    {
+        cin>>A[i];
+    }
+    for(int i=0;i<M; i++)
+    {
+        cin>>B[i];
+    }
+    for(int j=M-1; j>=K; j--)
+    {
+        for(int i = 0; i<K; i++)
+        {
+            while (A[i]!=B[i] && A[j]!=0)
+            {
+                A[i]= A[i] + 1;
+                A[j]= A[j] - 1;
+            }
+        }
+    }
+    for(int i = K; i<M; i++)
+    {
+        if(A[i]==0)
+            flag++;
+    }
+    if(flag == (M-K) or M<K)
+        cout<<"YES"<<endl;
+    else
+        cout<<"NO"<<endl;
+    }
+    return 0;
+}
