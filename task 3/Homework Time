@@ -1,0 +1,24 @@
+T = int(input())
+F = [1,2,3]
+res = []
+first = 1
+second = 2
+third = 3
+for i in range(0, 10000):
+    ele = first + second + third
+    F.append(ele)
+    first = second
+    second = third
+    third = ele
+for i in range(0,T):
+    rev = 0
+    n = int(input())
+    ele = (F[n-2] + F[n-3] + F[n-4])%(pow(10,9) + 7)
+    while ele!=0:
+        f = ele%10
+        rev = rev*10 + f
+        ele = ele//10
+    res.append(rev)
+for i in range(0,T):
+    print(res[i])
+    
