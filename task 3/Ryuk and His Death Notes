@@ -1,0 +1,25 @@
+N = int(input())
+a = list( map(int, input().split()))
+b = list( map(int, input().split()))
+c = []
+for i in range(0,N):
+    ele = b[i]//a[i]
+    c.append(ele)
+dn=0
+while c[0]!=0:
+    if c[0]>=1:
+        c[0] = c[0]-1
+        dn= dn+1
+    if c[1]>=1:
+        c[1] = c[1]-1
+        dn= dn+1
+    if c[2]>=1:
+        c[2] = c[2]-1
+        dn= dn+1
+    if c[3]>=1:
+        c[3] = c[3]-1
+        dn= dn+1
+if dn%4 == 0:
+    print(dn//4)
+else:
+    print("0")
